@@ -112,6 +112,9 @@ Use case ends.
 2. Should be able to hold up to 1000 persons.
 3. Should come with automated unit tests and open source code.
 4. Should favor DOS style commands over Unix-style commands.
+5. Should have very fast runtime and performance.
+6. Should be able to merge AddressBook to Google Contacts.
+7. Should have basic encryption to keep AddressBook secure.
 
 ## Appendix D : Glossary
 
