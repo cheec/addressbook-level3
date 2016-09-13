@@ -100,7 +100,7 @@ Use case ends.
 > 3a1. AddressBook shows an error message <br>
   Use case resumes at step 2
 
-4. No change detected
+4a. No change detected
 
 > 4a1. AddressBook shows an error message <br>
   Use case resumes at step 4
