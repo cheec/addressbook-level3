@@ -14,31 +14,31 @@ import java.io.IOException;
  * The GUI of the App
  */
 public class Gui {
-
-    /** Offset required to convert between 1-indexing and 0-indexing.  */
+    
+    /** Offset required to convert between 1-indexing and 0-indexing. */
     public static final int DISPLAYED_INDEX_OFFSET = 1;
     
     private static final String RESOURCES_IMAGES_DIRECTORY = "file:src/seedu/addressbook/resources/images";
-    private static final String APP_ICON_FILENAME = "book_icon.png";
-
-    public static final int INITIAL_WINDOW_WIDTH = 800;
+    private static final String APP_ICON_FILENAME          = "book_icon.png";
+    
+    public static final int INITIAL_WINDOW_WIDTH  = 800;
     public static final int INITIAL_WINDOW_HEIGHT = 600;
+    
     private final Logic logic;
-
-    private MainWindow mainWindow;
-    private String version;
-
+    private MainWindow  mainWindow;
+    private String      version;
+    
     public Gui(Logic logic, String version) {
         this.logic = logic;
         this.version = version;
     }
-
+    
     public void start(Stage stage, Stoppable mainApp) throws IOException {
         mainWindow = createMainWindow(stage, mainApp);
         mainWindow.displayWelcomeMessage(version, logic.getStorageFilePath());
     }
-
-    private MainWindow createMainWindow(Stage stage, Stoppable mainApp) throws IOException{
+    
+    private MainWindow createMainWindow(Stage stage, Stoppable mainApp) throws IOException {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(Main.class.getResource("ui" + File.separator + "mainwindow.fxml"));
         stage.getIcons().add(new Image(RESOURCES_IMAGES_DIRECTORY + File.separator + APP_ICON_FILENAME));
@@ -50,5 +50,5 @@ public class Gui {
         mainWindow.setMainApp(mainApp);
         return mainWindow;
     }
-
+    
 }
