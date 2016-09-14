@@ -19,7 +19,7 @@ public class Gui {
     public static final int DISPLAYED_INDEX_OFFSET = 1;
     
     private static final String RESOURCES_IMAGES_FILEPATH = "file:src/seedu/addressbook/resources/images";
-    private static final String APP_ICON_FILENAME          = "book_icon.png";
+    private static final String APP_ICON_FILENAME         = "book_icon.png";
     
     public static final int INITIAL_WINDOW_WIDTH  = 800;
     public static final int INITIAL_WINDOW_HEIGHT = 600;
