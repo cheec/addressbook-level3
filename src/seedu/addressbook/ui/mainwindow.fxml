@@ -11,7 +11,7 @@
         <TextArea fx:id="outputConsole" editable="false" wrapText="true" VBox.vgrow="ALWAYS">
         </TextArea>
 
-        <TextField fx:id="commandInput" onAction="#onCommand" VBox.vgrow="NEVER">
+        <TextField fx:id="commandInput" onAction="#onCommand" promptText="Enter commands here (&quot;help&quot; for all available commands)" VBox.vgrow="NEVER">
         </TextField>
 
     </children>
