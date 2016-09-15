@@ -3,6 +3,7 @@ package seedu.addressbook.ui;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import seedu.addressbook.commands.ExitCommand;
@@ -57,7 +58,15 @@ public class MainWindow {
             throw new RuntimeException(e);
         }
     }
-
+    
+    @FXML
+    private MenuItem quitProgram;
+    
+    @FXML
+    void onClickQuitProgram(ActionEvent event) throws Exception {
+        exitApp();
+    }
+    
     private void exitApp() throws Exception {
         mainApp.stop();
     }
