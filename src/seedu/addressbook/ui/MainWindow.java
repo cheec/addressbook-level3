@@ -1,11 +1,14 @@
 package seedu.addressbook.ui;
 
 
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.Scene;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 import seedu.addressbook.commands.ExitCommand;
 import seedu.addressbook.logic.Logic;
 import seedu.addressbook.commands.CommandResult;
@@ -23,8 +26,17 @@ public class MainWindow {
 
     private Logic logic;
     private Stoppable mainApp;
-
+    private Stage stage;
+    
+    private boolean isLightsOn; // application default style is light
+    
+    private final String darkThemeURL;
+    private final String lightThemeURL;
+    
     public MainWindow(){
+        isLightsOn = true;
+        darkThemeURL = this.getClass().getResource("DarkTheme.css").toExternalForm();
+        lightThemeURL = this.getClass().getResource("LightTheme.css").toExternalForm();
     }
 
     public void setLogic(Logic logic){
@@ -33,6 +45,10 @@ public class MainWindow {
 
     public void setMainApp(Stoppable mainApp){
         this.mainApp = mainApp;
+    }
+    
+    public void setStage(Stage stage) {
+        this.stage = stage;
     }
 
     @FXML
@@ -66,6 +82,18 @@ public class MainWindow {
     void onClickQuitProgram(ActionEvent event) throws Exception {
         logic.execute(ExitCommand.COMMAND_WORD);
         exitApp();
+    }
+    
+    @FXML
+    private MenuItem toggleLights;
+    
+    @FXML
+    void onToggleLights(ActionEvent event) {
+        ObservableList<String> styleSheets = stage.getScene().getStylesheets();
+        styleSheets.clear();
+        // if lights are on, set theme to dark and vice versa
+        styleSheets.add(isLightsOn ? darkThemeURL : lightThemeURL);
+        isLightsOn = !isLightsOn;
     }
     
     private void exitApp() throws Exception {
