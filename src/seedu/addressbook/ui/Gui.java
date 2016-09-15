@@ -44,6 +44,7 @@ public class Gui {
         stage.getIcons().add(new Image(RESOURCES_IMAGES_FILEPATH + File.separator + APP_ICON_FILENAME));
         stage.setTitle(version);
         stage.setScene(new Scene(loader.load(), INITIAL_WINDOW_WIDTH, INITIAL_WINDOW_HEIGHT));
+        stage.getScene().getStylesheets().add(this.getClass().getResource("LightTheme.css").toString());
         stage.show();
         MainWindow mainWindow = loader.getController();
         mainWindow.setLogic(logic);
