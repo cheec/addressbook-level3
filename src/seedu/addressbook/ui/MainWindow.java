@@ -28,15 +28,14 @@ public class MainWindow {
     private Stoppable mainApp;
     private Stage stage;
     
-    private boolean isLightsOn; // application default style is light
+    private boolean isLightsOn = true; // application default theme is light
     
-    private final String darkThemeURL;
-    private final String lightThemeURL;
+    private final String darkTheme;
+    private final String lightTheme;
     
     public MainWindow(){
-        isLightsOn = true;
-        darkThemeURL = this.getClass().getResource("DarkTheme.css").toExternalForm();
-        lightThemeURL = this.getClass().getResource("LightTheme.css").toExternalForm();
+        darkTheme = this.getClass().getResource("DarkTheme.css").toString();
+        lightTheme = this.getClass().getResource("LightTheme.css").toString();
     }
 
     public void setLogic(Logic logic){
@@ -92,7 +91,7 @@ public class MainWindow {
         ObservableList<String> styleSheets = stage.getScene().getStylesheets();
         styleSheets.clear();
         // if lights are on, set theme to dark and vice versa
-        styleSheets.add(isLightsOn ? darkThemeURL : lightThemeURL);
+        styleSheets.add(isLightsOn ? darkTheme : lightTheme);
         isLightsOn = !isLightsOn;
     }
     
