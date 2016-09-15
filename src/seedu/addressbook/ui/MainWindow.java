@@ -64,6 +64,7 @@ public class MainWindow {
     
     @FXML
     void onClickQuitProgram(ActionEvent event) throws Exception {
+        logic.execute(ExitCommand.COMMAND_WORD);
         exitApp();
     }
     
