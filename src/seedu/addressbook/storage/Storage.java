@@ -1,7 +1,6 @@
 package seedu.addressbook.storage;
 
 import seedu.addressbook.data.AddressBook;
-import seedu.addressbook.data.exception.IllegalValueException;
 
 public abstract class Storage {
     
@@ -15,7 +14,6 @@ public abstract class Storage {
         }
     }
     
-    
     /**
      * Saves data of address book to this storage.
      */
@@ -26,6 +24,9 @@ public abstract class Storage {
      */
     public abstract AddressBook load() throws StorageOperationException;
     
+    /**
+     * Returns the string representation of this storage path.
+     */
     public abstract String getPath();
     
 }
