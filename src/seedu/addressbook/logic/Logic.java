@@ -25,7 +25,7 @@ public class Logic {
     private List<? extends ReadOnlyPerson> lastShownList = Collections.emptyList();
 
     public Logic() throws Exception{
-        setStorage(initializeStorage());
+        setStorage(initializeStorageFile());
         setAddressBook(storage.load());
     }
 
@@ -46,7 +46,7 @@ public class Logic {
      * Creates the StorageFile object based on the user specified path (if any) or the default storage path.
      * @throws StorageFile.InvalidStorageFilePathException if the target file path is incorrect.
      */
-    private Storage initializeStorage() throws StorageFile.InvalidStorageFilePathException {
+    private Storage initializeStorageFile() throws StorageFile.InvalidStorageFilePathException {
         return new StorageFile();
     }
 
